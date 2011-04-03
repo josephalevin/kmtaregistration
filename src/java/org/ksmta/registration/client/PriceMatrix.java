@@ -10,34 +10,72 @@
 package org.ksmta.registration.client;
 
 import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.gwt.i18n.client.Dictionary;
 import java.util.Date;
+import java.util.MissingResourceException;
 
 /**
  *
  * @author Joseph A. Levin
  */
+@SuppressWarnings("StaticNonFinalUsedInInitialization")
 public class PriceMatrix {
-          
+    public static Date DEADLINE;
+    private static boolean QUALIFY_DEADLINE;
+    
     static{
         DateTimeFormat format = DateTimeFormat.getFormat("yyyy-MM-dd");
-        DEADLINE = format.parse("2011-05-16");
+//        DEADLINE = format.parse("2011-05-16");
+
+        try{
+            Dictionary dict = Dictionary.getDictionary("RegistrationProperties");
+            DEADLINE = format.parse(dict.get("earlyDeadline"));
+            QUALIFY_DEADLINE = new Date().before(DEADLINE);
+
+        }
+        catch(MissingResourceException e){
+            e.printStackTrace();
+        }
+
+
+        EARLY_FEE = new int[] {0, price("earlyBothPrice"), price("earlyFridayPrice"), price("earlySaturdayPrice")};
+        NORMAL_FEE = new int[] {0, price("normalBothPrice"), price("normalFridayPrice"), price("normalSaturdayPrice")};
+        STUDENT_FEE = new int[] {0, price("studentBothPrice"), price("studentFridayPrice"), price("studentSaturdayPrice")};
+
+        
+
 
     }
+
+    private static int price(String property){
+        try{
+            Dictionary dict = Dictionary.getDictionary("RegistrationProperties");
+            String price = dict.get(property);
+            price = price.trim();
+            return Integer.valueOf(price);
+
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            return 999;
+        }
+    }
     
-    public static final Date DEADLINE;
     
-    
-    //DEBUG    
-    private static final boolean QUALIFY_DEADLINE = new Date().before(DEADLINE);
 
     
     //Empty, Both, Friday, Saturday
     
-    private static final int[] EARLY_FEE = new int[] {0, 75, 60, 50};
-    private static final int[] NORMAL_FEE = new int[] {0, 90, 75, 65};
-    private static final int[] STUDENT_FEE = new int[] {0, 20, 15, 10};
+//    private static final int[] EARLY_FEE = new int[] {0, 75, 60, 50};
+//    private static final int[] NORMAL_FEE = new int[] {0, 90, 75, 65};
+//    private static final int[] STUDENT_FEE = new int[] {0, 20, 15, 10};
+    private static final int[] EARLY_FEE;
+    private static final int[] NORMAL_FEE;
+    private static final int[] STUDENT_FEE;
+
     /** Creates a new instance of PriceMatrix */
     public PriceMatrix() {
+
     }
     
     

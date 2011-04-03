@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
 	<inherits name="com.google.gwt.user.User"/>
+        <inherits name="com.google.gwt.i18n.I18N"/>
 	<entry-point class="org.ksmta.registration.client.MainEntryPoint"/>
 	<!-- Do not define servlets here, use web.xml -->
 </module>
