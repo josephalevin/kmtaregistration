@@ -20,7 +20,7 @@ public class PriceMatrix {
           
     static{
         DateTimeFormat format = DateTimeFormat.getFormat("yyyy-MM-dd");
-        DEADLINE = format.parse("2010-05-15");
+        DEADLINE = format.parse("2011-05-16");
 
     }
     
@@ -34,7 +34,7 @@ public class PriceMatrix {
     //Empty, Both, Friday, Saturday
     
     private static final int[] EARLY_FEE = new int[] {0, 75, 60, 50};
-    private static final int[] NORMAL_FEE = new int[] {0, 100, 75, 65};
+    private static final int[] NORMAL_FEE = new int[] {0, 90, 75, 65};
     private static final int[] STUDENT_FEE = new int[] {0, 20, 15, 10};
     /** Creates a new instance of PriceMatrix */
     public PriceMatrix() {
