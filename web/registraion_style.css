@@ -1,0 +1,88 @@
+.registration-form{
+    width: 450px; 
+    border: 1px solid black;
+padding: 5px 5px 5px 5px; 
+    
+}
+
+.registration-total{
+    padding: 5px 5px 5px 5px;   
+    font-weight: bold;
+    font-size: 150%;
+    border: 2px solid green;
+    color: green;
+    width: 100px;
+    margin: 0px 0px 10px 0px;
+    text-align: center;    
+    vertical-align: middle;
+}
+
+.section {
+    width: 100%;
+}
+
+.section.membership {
+    background: pink;    
+}
+
+.section-title{
+    background: #396688;
+    color: white;
+    padding: 3px 3px 3px 3px;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+.section-intro{    
+    padding: 10px 10px 10px 10px;       
+}
+
+.section-form{    
+    width: 100%;
+}
+
+.section-label{  
+    font-weight: bold;    
+}
+.gwt-Label { 
+    font-weight: bold;    
+}
+
+.section-description{     
+    font-size: 80%;
+}
+
+.section-sub{  
+    margin: 10px;
+    padding: 10px 10px 10px 10px;  
+    background: #D0E6F6;    
+    border: 2px solid #396688;
+}
+
+.section-leftspacer{   
+    width: 30px;
+}
+
+.section-bottomspacer{    
+    height: 25px;
+}
+
+.error-panel{    
+    margin: 0px 0px 10px 0px;
+    padding: 10px 10px 10px 10px;  
+    background: pink;
+    width: 450px;
+    border: 2px solid red;
+}
+
+.pleasewait-panel{    
+    margin: 0px 0px 10px 0px;
+    padding: 10px 10px 10px 10px;  
+    background: #D0E6F6;    
+    border: 2px solid #396688;       
+    width: 450px;
+    height: 100px;  
+    vertical-align: middle;
+}
+
+
